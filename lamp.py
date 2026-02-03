@@ -79,13 +79,21 @@ class Lamp:
         }
         return json.dumps(json_config)
 
+    def str2int(self,value,maxmin):
+        if value == '(missing)':
+            if maxmin == 'max':
+                value = 255
+            else:
+                value = 0
+        return(int(value))
+
     @property
     def level(self):
         return self.__level
 
     @level.setter
     def level(self, value):
-        if not self.min_level <= value <= self.max_level and value != 0:
+        if not self.str2int(self.min_level,'min') <= int(value) <= self.str2int(self.max_level,'max') and int(value) != 0:
             raise ValueError
         self.__level = value
         self.driver.send(gear.DAPC(self.short_address, self.level))

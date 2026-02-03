@@ -195,11 +195,11 @@ def initialize_lamps(data_object, client):
             )
             logger.info(
                 "   - short address: %d, actual brightness level: %d (minimum: %d, max: %d, physical minimum: %d)",
-                short_address.address,
-                actual_level.value,
-                min_level.value,
-                max_level.value,
-                physical_minimum.value,
+                int(short_address.address),
+                int(actual_level.value),
+                int(min_level.value),
+                int(max_level.value),
+                int(physical_minimum.value),
             )
 
         except DALIError as err:

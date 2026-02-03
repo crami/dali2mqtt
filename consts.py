@@ -66,4 +66,5 @@ ALL_SUPPORTED_LOG_LEVELS = {
 RESET_COLOR = "\x1b[0m"
 RED_COLOR = "\x1b[31;21m"
 YELLOW_COLOR = "\x1b[33;21m"
-LOG_FORMAT = "%(asctime)s %(levelname)s: %(message)s{}".format(RESET_COLOR)
+#LOG_FORMAT = "%(asctime)s %(levelname)s: %(message)s{}".format(RESET_COLOR)
+LOG_FORMAT = "%(asctime)s %(levelname)s: %(message)s"
